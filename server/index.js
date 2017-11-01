@@ -6,9 +6,9 @@ const passport = require('passport');
 const session = require('express-session');
 const Auth0Strategy = require('passport-auth0');
 const massive = require('massive');
-const product_controller = require('./product_controller');
-const user_controller = require('./user_controller');
-const cart_controller = require('./cart_controller');
+const product_controller = require('./controllers/product_controller');
+const user_controller = require('./controllers/user_controller');
+const cart_controller = require('./controllers/cart_controller');
 
 
 
@@ -72,7 +72,11 @@ app.get('/auth/me', (req, res) => {
     }
 })
 
-
+app.get('/api/product/brand', product_controller.getProduct)
+app.get('/api/product/brand/:brand', product_controller.getProduct)
+app.put('/api/cart', cart_controller.updateCart)
+app.get('/api/cart', cart_controller.getCart)
+app.delete('/api/cart', cart_controller.deleteCart)
 
 
 

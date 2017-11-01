@@ -13,6 +13,6 @@ api/delete/cart
 
 
 api.get('/api/product/brand', product_controller.getProduct)
-api.update('/api/cart', product_controller.updateCart)
-api.get('/api/cart', product_controller.getCart)
-api.delete('/api/cart', product_controller.deleteCart)
+api.update('/api/cart', cart_controller.updateCart)
+api.get('/api/cart', cart_controller.getCart)
+api.delete('/api/cart', cart_controller.deleteCart)
