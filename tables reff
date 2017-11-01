@@ -1,0 +1,23 @@
+users
+Id
+user_name
+email
+auth_id
+
+
+products
+Id
+shoe_name
+brand
+price
+color
+year
+
+
+cart
+Id
+products_id
+users_id
+price
+total
+description(product name)

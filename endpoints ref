@@ -1,0 +1,18 @@
+api/get/products/brand
+//gets brands and specify what brand to get between Nike, adidas, Yeezy and air jordans
+
+api/put/cart
+//updates cart when user adds or removes items from cart
+
+api/get/cart
+//shows what products are in the cart
+
+api/delete/cart 
+//remove items from cart when user has purchased or when user removes from cart
+
+
+
+api.get('/api/product/brand', product_controller.getProduct)
+api.update('/api/cart', product_controller.updateCart)
+api.get('/api/cart', product_controller.getCart)
+api.delete('/api/cart', product_controller.deleteCart)
