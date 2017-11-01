@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.css'
 import logo from './logo.png'
-
+import {Link} from 'react-router-dom'
 
 export default class Navbar extends Component {
 
@@ -14,6 +14,7 @@ export default class Navbar extends Component {
                 <img alt='' src={logo}/>
                 <h1>Build Navbar here to render on all pages</h1>
             </div>
+          
         )
     }
 }
