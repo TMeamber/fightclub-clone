@@ -11,10 +11,17 @@ class Brand extends Component {
 
 
         this.state = {
+            brand: ""
 
     }
 }
+    componentDidMount(){
+        this.props.getbrand();
+      }
+
+
     render() {
+        const brand = this.props.brand
         return (
             <div className='Brand'>
                 <h1>Brand will be here</h1>  

@@ -27,21 +27,32 @@
 }
 .airjordan{
 color: white;
+font-size: 14px;
+font-weight: 200;
+text-transform: uppercase;
 }
 .nike{
-  color: white;   
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: uppercase;  
 }
 .yeezy{
-  color: white;  
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: uppercase;  
 }
 .adidas{
   color: white; 
-  font-size: 18px;   
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 
 .logo{
   height: 31px;
-  margin-left: 130px;
+  margin-left: 350px;
 }
 
 .login{
