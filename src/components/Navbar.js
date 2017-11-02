@@ -9,10 +9,13 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className='Navbar'>
-                <button>JOIN/SIGN IN</button>
+                <nav className="navbar">
+                <a href='http://localhost:3005/auth'>
+                    <button>JOIN/SIGN IN</button>
+                </a>
                 <div className="cart">Cart</div>
                 <img alt='' src={logo}/>
-                <h1>Build Navbar here to render on all pages</h1>
+                </nav>
             </div>
           
         )
