@@ -16,7 +16,7 @@ class App extends Component {
           <img className="logo" alt='' src={logo} />
             <div className="cart">Cart</div>
             <a href='http://localhost:3005/auth'>
-              <button>JOIN/SIGN IN</button>
+              <div>JOIN/SIGN IN</div>
             </a>
           </nav>
           <div className="lowernav"></div>

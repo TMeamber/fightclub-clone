@@ -71,13 +71,16 @@ app.get('/auth/me', (req, res) => {
         return res.status(401).send('Need to log in.')
     }
 })
-
+//gets products from products table in database
 app.get('/api/product/brand', product_controller.getProduct)
-app.get('/api/product/brand/:brand', product_controller.getProduct)
-app.put('/api/cart', cart_controller.updateCart)
-app.get('/api/cart', cart_controller.getCart)
-app.delete('/api/cart', cart_controller.deleteCart)
+app.get('/api/product/brand/:brand', product_controller.getBrand)
 
+//adds and updates cart
+app.put('/api/cart', cart_controller.updateCart)
+//gets the products to show up in the cart
+app.get('/api/cart', cart_controller.getCart)
+//when purchased or deleted remove items from cart
+app.delete('/api/cart', cart_controller.deleteCart)
 
 
 const PORT = 3005;
