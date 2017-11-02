@@ -1,10 +1,38 @@
 import axios from 'axios';
 
-
 const initialState = {
-    user: {}
+    user: {},
+    getbrand: ""
 }
 
+const GET_USER_INFO = 'GET_USER_INFO'
+
+export function getUserInfo() {
+    const user = axios.get('/auth/me').then(res => res.data)
+    return {
+        type: GET_USER_INFO,
+        payload: user
+    }
+}
+
+const GET_PRODUCT_BRAND = 'GET_PRODUCT_BRAND'
+
+export function getbrand(brand){
+    const getbrand = axios.get(`/api/product/brand/${brand}`).then(res => res.data)
+    return {
+        type: GET_PRODUCT_BRAND,
+        payload: getbrand
+    }
+}
+
+
 export default function reducer(state = initialState, action) {
-        return state;
+    switch (action.type) {
+        case GET_USER_INFO + '_FULFILLED':
+            return Object.assign({}, state, {user: action.payload})
+            case GET_PRODUCT_BRAND + '_FULFILLED':
+            return Object.assign({}, state, {brand: action.payload})
+        default:
+            return state;
+    }
 }
