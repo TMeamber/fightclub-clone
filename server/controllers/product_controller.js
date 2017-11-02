@@ -16,7 +16,6 @@ module.exports = {
       getBrand: (req,res,next) =>{
         const dbInstance = req.app.get('db');
         const brand = req.params.brand
-        console.log(brand)
         dbInstance.get_products_by_brand(brand)
             .then(products => res.status(200).send(products))
             .catch( () => res.status(500).send() );

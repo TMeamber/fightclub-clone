@@ -73,6 +73,7 @@ app.get('/auth/me', (req, res) => {
 })
 //gets products from products table in database
 app.get('/api/product/brand', product_controller.getProduct)
+//sorts through and pulls exactly what brand you search for
 app.get('/api/product/brand/:brand', product_controller.getBrand)
 
 //adds and updates cart
