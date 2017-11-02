@@ -19,6 +19,11 @@ class App extends Component {
               <button>JOIN/SIGN IN</button>
             </a>
           </nav>
+          <div className="lowernav"></div>
+          <div className="aj">Air Jordan</div>
+          <div className='nike'>Nike</div>
+          <div className='adidas'>Adidas</div>
+          <div className='yeezy'>Yeezy</div>
         </div>
         <Route exact path='/' component={Home} />
         <Route path='/brand' component={Brand} />
