@@ -8,7 +8,7 @@
   height: 57px;
   color: white;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-right: 27px; 
@@ -16,28 +16,38 @@
 
 .lowernav{
   width: 100%;
-  height: 57px;
+  height: 45px;
   background-color: #333333; 
   color: white;
-  display: block;
-  flex-direction: row;
-  justify-content: space-between;
+  display: flex;
+  display: row;
+  justify-content: space-around;
   align-items: center;
   padding-right: 27px; 
 }
-.aj{
-color: grey;
+.airjordan{
+color: white;
 }
 .nike{
-  color: grey;  
+  color: white;   
 }
 .yeezy{
-  color: grey;  
+  color: white;  
 }
 .adidas{
-  color: grey;  
+  color: white; 
+  font-size: 18px;   
 }
 
 .logo{
-  height: 45px;
+  height: 31px;
+  margin-left: 130px;
+}
+
+.login{
+  margin-right: 250px;
+}
+a {
+  text-decoration: none;
+  color: black;
 }

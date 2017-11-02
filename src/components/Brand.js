@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import './Brand.css'
+import {connect} from 'react-redux';
+import {getbrand} from '../ducks/users';
 
 
 
-export default class Brand extends Component {
+class Brand extends Component {
+    constructor(props){
+        super()
 
 
+        this.state = {
+
+    }
+}
     render() {
         return (
             <div className='Brand'>
@@ -14,3 +22,10 @@ export default class Brand extends Component {
         )
     }
 }
+
+function mapStateToProps(state){
+    return{
+        brand: state.brand
+    }
+}
+export default connect(mapStateToProps, {getbrand})(Brand);

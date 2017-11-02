@@ -16,7 +16,7 @@ export function getUserInfo() {
 }
 
 const GET_PRODUCT_BRAND = 'GET_PRODUCT_BRAND'
-
+//be able to go and display the brands on Brand page based on what brand is clicked on
 export function getbrand(brand){
     const getbrand = axios.get(`/api/product/brand/${brand}`).then(res => res.data)
     return {
