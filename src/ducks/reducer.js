@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const initialState = {
     user: {},
-    getbrand: ""
+    getbrand: []
 }
 
 const GET_USER_INFO = 'GET_USER_INFO'

@@ -1,38 +1,46 @@
 import React, { Component } from 'react';
 import './Brand.css'
-import {connect} from 'react-redux';
-import {getbrand} from '../ducks/users';
-
+import { connect } from 'react-redux';
+import { getbrand } from '../ducks/reducer';
+import Shoecard from './Shoecard'
 
 
 class Brand extends Component {
-    constructor(props){
-        super()
 
-
-        this.state = {
-            brand: ""
-
+    componentWillReceiveProps(nextProps){
+        nextProps.getbrand(nextProps.match.params.brand)
     }
-}
-    componentDidMount(){
-        this.props.getbrand();
-      }
+
+
+
 
 
     render() {
-        const brand = this.props.brand
-        return (
-            <div className='Brand'>
-                <h1>Brand will be here</h1>  
-            </div>
-        )
+            const brandArr = this.props.brand ?
+                this.props.brand.map((e, i) => {
+                    return (
+                        <Shoecard key={i}
+                            brand={e.brand}
+                            name={e.shoe_name}
+                            price={e.price}
+                            image={e.image}
+                        />
+                    )
+                }) : null;
+            return (
+                <div className='Brand'>
+                    <div>
+                        {brandArr} 
+                    </div>
+                </div>
+            )
+        }
     }
-}
 
-function mapStateToProps(state){
-    return{
+
+function mapStateToProps(state) {
+    return {
         brand: state.brand
     }
 }
-export default connect(mapStateToProps, {getbrand})(Brand);
+export default connect(mapStateToProps, { getbrand })(Brand);

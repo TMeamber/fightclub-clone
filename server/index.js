@@ -24,6 +24,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 massive(process.env.CONNECTION_STRING).then((db) => {
+    console.log("DB connected")
     app.set('db', db);
 })
 

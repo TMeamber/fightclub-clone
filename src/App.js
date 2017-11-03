@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Brand from './components/Brand';
 import Productdetails from './components/Productsdetails';
-import { Route, Link } from 'react-router';
+import { Route, Link } from 'react-router-dom';
 import logo from './components/logo.png'
 
 class App extends Component {
@@ -21,13 +21,22 @@ class App extends Component {
           </nav>
         </div>
         <div className="lowernav">
-        <div className="airjordan">Air Jordan</div>
-        <div className='nike'>Nike</div>
-        <div className='adidas'>Adidas</div>
-        <div className='yeezy'>Yeezy</div>
+        <Link to="/brand/air-jordan">
+          <div className="airjordan">Air Jordan</div>
+        </Link>  
+        <Link to="/brand/nike">
+          <div className='nike'>Nike</div>
+        </Link>
+        <Link to="/brand/adidas">
+          <div className='adidas'>Adidas</div>
+        </Link>
+        <Link to="/brand/yeezy">
+          <div className='yeezy'>Yeezy</div>
+         </Link>
+        
         </div>
         <Route exact path='/' component={Home} />
-        <Route path='/brand' component={Brand} />
+        <Route path='/brand/:brand/' component={Brand} />
         <Route path='/productsdetails' component={Productdetails} />
       </div>
     );
