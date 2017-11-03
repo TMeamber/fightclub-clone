@@ -29,33 +29,33 @@ massive(process.env.CONNECTION_STRING).then((db) => {
 })
 
 
-passport.use( new Auth0Strategy({
+passport.use(new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
     clientID: process.env.AUTH_CLIENT_ID,
     clientSecret: process.env.AUTH_CLIENT_SECRET,
     callbackURL: process.env.AUTH_CALLBACK
-}, function(accessToken, refreshToken, extraParams, profile, done){
+}, function (accessToken, refreshToken, extraParams, profile, done) {
     const db = app.get('db');
     const userData = profile._json;
-    db.find_user([userData.identities[0].user_id]).then( user => {
-        if(user[0]) {
-          return done(null, user[0].id);
+    db.find_user([userData.identities[0].user_id]).then(user => {
+        if (user[0]) {
+            return done(null, user[0].id);
         } else {
             db.create_user([
                 userData.name,
                 userData.email,
                 userData.identities[0].user_id
-            ]).then( users => {
+            ]).then(users => {
                 return done(null, users[0].id)
             })
         }
     })
 }))
-passport.serializeUser( function(id, done){
+passport.serializeUser(function (id, done) {
     done(null, id)
 })
-passport.deserializeUser( function(id,done){
-    app.get('db').find_session_user([id]).then(user =>{
+passport.deserializeUser(function (id, done) {
+    app.get('db').find_session_user([id]).then(user => {
         done(null, user[0]);
     })
 })

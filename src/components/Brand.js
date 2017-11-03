@@ -7,35 +7,43 @@ import Shoecard from './Shoecard'
 
 class Brand extends Component {
 
-    componentWillReceiveProps(nextProps){
-        nextProps.getbrand(nextProps.match.params.brand)
+    componentDidMount(){
+        this.props.getbrand(this.props.match.params.brand)
     }
 
-
-
-
-
-    render() {
-            const brandArr = this.props.brand ?
-                this.props.brand.map((e, i) => {
-                    return (
-                        <Shoecard key={i}
-                            brand={e.brand}
-                            name={e.shoe_name}
-                            price={e.price}
-                            image={e.image}
-                        />
-                    )
-                }) : null;
-            return (
-                <div className='Brand'>
-                    <div>
-                        {brandArr} 
-                    </div>
-                </div>
-            )
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.location.pathname !== this.props.location.pathname){
+            this.props.getbrand(nextProps.match.params.brand)
         }
     }
+
+    
+
+    render() {
+        console.log(this.props.brand)
+        const brandArr = this.props.brand ?
+            this.props.brand.map((e, i) => {
+                return (
+                    
+                    
+                    <Shoecard key={i}
+                        brand={e.brand}
+                        name={e.shoe_name}
+                        price={e.price}
+                        image={e.image}
+                    />
+                    
+                )
+            }) : null;
+        return (
+            <div className='Brand'>
+                <div>
+                    {brandArr}
+                </div>
+            </div>
+        )
+    }
+}
 
 
 function mapStateToProps(state) {

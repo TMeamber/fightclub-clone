@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <div className='Navbar'>
           <nav className="navbar">
-            <img className="logo" alt='' src={logo} />
+            <Link to="/"><img className="logo" alt='' src={logo} /></Link>
             <input className="search" />
             <div className="cart">Cart</div>
             <a href='http://localhost:3005/auth'>
@@ -21,19 +21,19 @@ class App extends Component {
           </nav>
         </div>
         <div className="lowernav">
-        <Link to="/brand/air-jordan">
-          <div className="airjordan">Air Jordan</div>
-        </Link>  
-        <Link to="/brand/nike">
-          <div className='nike'>Nike</div>
-        </Link>
-        <Link to="/brand/adidas">
-          <div className='adidas'>Adidas</div>
-        </Link>
-        <Link to="/brand/yeezy">
-          <div className='yeezy'>Yeezy</div>
-         </Link>
-        
+          <Link to="/brand/air-jordan">
+            <div className="airjordan">Air Jordan</div>
+          </Link>
+          <Link to="/brand/nike">
+            <div className='nike'>Nike</div>
+          </Link>
+          <Link to="/brand/adidas">
+            <div className='adidas'>Adidas</div>
+          </Link>
+          <Link to="/brand/yeezy">
+            <div className='yeezy'>Yeezy</div>
+          </Link>
+
         </div>
         <Route exact path='/' component={Home} />
         <Route path='/brand/:brand/' component={Brand} />

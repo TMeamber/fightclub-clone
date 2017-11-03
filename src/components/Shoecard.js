@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default function Brand(props) {
-   
+   console.log(props.brand)
     return (
         <div>
             <h1>{props.name}</h1>
