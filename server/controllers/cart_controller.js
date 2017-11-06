@@ -1,11 +1,11 @@
 module.exports = {
-  getCart: (req, res, next) => {
-    const dbInstance = req.app.get('db');
+  // getCart: (req, res, next) => {
+  //   const dbInstance = req.app.get('db');
 
-    dbInstance.read_cart()
-      .then(cart => res.status(200).send(cart))
-      .catch(() => res.status(500).send());
-  },
+  //   dbInstance.read_cart()
+  //     .then(cart => res.status(200).send(cart))
+  //     .catch(() => res.status(500).send());
+  // },
   updateCart: (req, res, next) => {
     const dbInstance = req.app.get('db');
 
@@ -34,7 +34,7 @@ addCart: (req, res, next) =>{
 displayCart: (req, res, next) =>{
   const dbInstance = req.app.get('db');
   dbInstance.display_cart()
-  .then(() =>{
+  .then(() => {
     res.status(200).send()
   })
   .catch((err) =>{

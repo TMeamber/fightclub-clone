@@ -80,7 +80,7 @@ app.get('/api/product/brand/:brand', product_controller.getBrand)
 //updates cart
 app.put('/api/cart', cart_controller.updateCart)
 //gets the products to show up in the cart
-app.get('/api/cart', cart_controller.getCart)
+// app.get('/api/cart', cart_controller.getCart)
 //when purchased or deleted remove items from cart
 app.delete('/api/cart', cart_controller.deleteCart)
 //add to cart

@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-
+import {connect} from 'react-redux'
+import { displayCart } from '../ducks/reducer';
 
 
 
 
 
 class Cart extends Component {
+  componentDidMount() {
+    this.props.displayCart(this.props.match.params.displayCart)
+}
     render() {
-      axios.get('/api/cart', )
       return (
         <h1>Cart Page</h1>
       )
     }
 }
-export default Cart;
+function mapStateToProps(state) {
+  return {
+      cart: state.cart
+  }
+}
+export default connect (mapStateToProps, { displayCart })(Cart);

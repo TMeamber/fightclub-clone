@@ -7,7 +7,7 @@ const initialState = {
 
 const GET_USER_INFO = 'GET_USER_INFO';
 const GET_PRODUCT_BRAND = 'GET_PRODUCT_BRAND';
-
+const DISPLAY_CART = 'DISPLAY_CART'
 //gets users info when signed in from auth0
 export function getUserInfo() {
     const user = axios.get('/auth/me').then(res => res.data)
@@ -25,6 +25,13 @@ export function getbrand(brand) {
         payload: getbrand
     }
 }
+export function displayCart(products){
+    const displayCart = axios.get('/api/cart').then(res => res.data)
+    return {
+        type: DISPLAY_CART,
+        payload: displayCart
+    }
+}
 
 
 export default function reducer(state = initialState, action) {
@@ -33,6 +40,8 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { user: action.payload })
         case GET_PRODUCT_BRAND + '_FULFILLED':
             return Object.assign({}, state, { brand: action.payload })
+            case DISPLAY_CART + '_FULFILLED':
+            return Object.assign({}, state, {displayCart: action.payload}  )
         default:
             return state;
     }
