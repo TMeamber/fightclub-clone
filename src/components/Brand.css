@@ -1,13 +1,10 @@
 .brand {
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
 }
 
 .shoecardflex{
-    width: 500px;
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap; 
 }

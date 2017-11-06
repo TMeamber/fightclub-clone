@@ -7,17 +7,17 @@ import Shoecard from './Shoecard'
 
 class Brand extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.getbrand(this.props.match.params.brand)
     }
 
     componentWillReceiveProps(nextProps) {
-        if(nextProps.location.pathname !== this.props.location.pathname){
+        if (nextProps.location.pathname !== this.props.location.pathname) {
             this.props.getbrand(nextProps.match.params.brand)
         }
     }
 
-    
+
 
     render() {
         const brandArr = this.props.brand ?
@@ -29,7 +29,7 @@ class Brand extends Component {
                         price={e.price}
                         image={e.image}
                     />
-                    
+
                 )
             }) : null;
         return (
