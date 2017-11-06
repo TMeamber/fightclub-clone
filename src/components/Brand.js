@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import './Brand.css'
 import { connect } from 'react-redux';
 import { getbrand } from '../ducks/reducer';
-import Shoecard from './Shoecard'
-
+import Shoecard from './Shoecard';
+import axios from 'axios';
 
 class Brand extends Component {
+    
 
     componentDidMount() {
         this.props.getbrand(this.props.match.params.brand)
@@ -16,7 +17,7 @@ class Brand extends Component {
             this.props.getbrand(nextProps.match.params.brand)
         }
     }
-
+   
 
 
     render() {
@@ -28,6 +29,7 @@ class Brand extends Component {
                         name={e.shoe_name}
                         price={e.price}
                         image={e.image}
+                        id={e.id}
                     />
 
                 )

@@ -77,13 +77,14 @@ app.get('/api/product/brand', product_controller.getProduct)
 //sorts through and pulls exactly what brand you search for
 app.get('/api/product/brand/:brand', product_controller.getBrand)
 
-//adds and updates cart
+//updates cart
 app.put('/api/cart', cart_controller.updateCart)
 //gets the products to show up in the cart
 app.get('/api/cart', cart_controller.getCart)
 //when purchased or deleted remove items from cart
 app.delete('/api/cart', cart_controller.deleteCart)
-
+//add to cart
+app.post('/api/cart', cart_controller.addCart)
 
 const PORT = 3005;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

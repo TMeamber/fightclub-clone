@@ -19,5 +19,13 @@ module.exports = {
     dbInstance.delete_cart()
       .then(() => res.status(200).send())
       .catch(() => res.status(500).send());
-  }
+  },
+
+addCart: (req, res, next) =>{
+  const dbInstance = req.app.get('db');
+
+  dbInstance.create_cart()
+  .then(() => res.status(200).send())
+  .catch(() => res.status(500).send());
+}
 }
