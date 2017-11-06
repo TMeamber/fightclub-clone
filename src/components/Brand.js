@@ -20,12 +20,9 @@ class Brand extends Component {
     
 
     render() {
-        console.log(this.props.brand)
         const brandArr = this.props.brand ?
             this.props.brand.map((e, i) => {
                 return (
-                    
-                    
                     <Shoecard key={i}
                         brand={e.brand}
                         name={e.shoe_name}
@@ -37,7 +34,7 @@ class Brand extends Component {
             }) : null;
         return (
             <div className='Brand'>
-                <div>
+                <div className="shoecardflex">
                     {brandArr}
                 </div>
             </div>
