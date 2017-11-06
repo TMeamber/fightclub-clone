@@ -3,7 +3,6 @@ import './Brand.css'
 import { connect } from 'react-redux';
 import { getbrand } from '../ducks/reducer';
 import Shoecard from './Shoecard';
-import axios from 'axios';
 
 class Brand extends Component {
     

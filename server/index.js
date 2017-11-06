@@ -55,7 +55,7 @@ passport.serializeUser(function (id, done) {
     done(null, id)
 })
 passport.deserializeUser(function (id, done) {
-    app.get('db').find_session_user([id]).then(user => {
+    app.get('db').find_user_session([id]).then(user => {
         done(null, user[0]);
     })
 })
@@ -85,6 +85,7 @@ app.get('/api/cart', cart_controller.getCart)
 app.delete('/api/cart', cart_controller.deleteCart)
 //add to cart
 app.post('/api/cart', cart_controller.addCart)
-
+//displays cart products
+app.get('/api/cart', cart_controller.displayCart)
 const PORT = 3005;
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));

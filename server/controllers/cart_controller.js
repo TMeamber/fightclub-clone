@@ -23,9 +23,22 @@ module.exports = {
 
 addCart: (req, res, next) =>{
   const dbInstance = req.app.get('db');
+  dbInstance.create_cart([req.body.id, req.user.id])
+  .then((product) => {  
+  res.status(200).send()})
 
-  dbInstance.create_cart()
-  .then(() => res.status(200).send())
-  .catch(() => res.status(500).send());
+  .catch((err) =>{
+   res.status(500).send()});
+},
+
+displayCart: (req, res, next) =>{
+  const dbInstance = req.app.get('db');
+  dbInstance.display_cart()
+  .then(() =>{
+    res.status(200).send()
+  })
+  .catch((err) =>{
+    res.status(500).send()
+  });
 }
 }
