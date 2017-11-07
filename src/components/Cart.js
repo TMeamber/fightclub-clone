@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { displayCart } from '../ducks/reducer';
-
+import axios from 'axios'
 
 
 
 
 class Cart extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      cart: []
+    }
+  }
   componentDidMount() {
-    this.props.displayCart(this.props.match.params.displayCart)
-}
+    axios.get('/api/cart').then(res =>{
+      console.log(res)
+    } )
+  }
     render() {
       return (
-        <h1>Cart Page</h1>
-      )
+        <div>
+       {this.state.cart}
+       </div>
+    )
     }
 }
 function mapStateToProps(state) {

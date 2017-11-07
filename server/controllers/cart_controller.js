@@ -33,9 +33,9 @@ addCart: (req, res, next) =>{
 
 displayCart: (req, res, next) =>{
   const dbInstance = req.app.get('db');
-  dbInstance.display_cart()
-  .then(() => {
-    res.status(200).send()
+  dbInstance.display_cart([req.user.id])
+  .then((cart) => {
+    res.status(200).send(cart)
   })
   .catch((err) =>{
     res.status(500).send()

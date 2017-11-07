@@ -6,7 +6,7 @@ import Productdetails from './components/Productsdetails';
 import { Route, Link } from 'react-router-dom';
 import logo from './components/logo.png'
 import Cart from './components/Cart';
-
+import cartlogo from './components/cart.png'
 
 
 class App extends Component {
@@ -18,11 +18,11 @@ class App extends Component {
             <Link to="/"><img className="logo" alt='' src={logo} /></Link>
             <input className="search" />
             <a href="http://localhost:3000/cart"> <i class="fa fa-shopping-cart"></i>
-              <div className="Cart"></div>
-            </a>
+                   </a>
             <a href='http://localhost:3005/auth'>
               <div className="login">JOIN / SIGN IN</div>
             </a>
+            <Link to="/cart"><img className="cartlogo" alt='' src={cartlogo} /></Link> 
           </nav>
         </div>
         <div className="lowernav">
