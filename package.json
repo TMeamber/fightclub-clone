@@ -1,5 +1,5 @@
 {
-  "name": "fight-club-clone",
+  "name": "flight-club-clone",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "react-responsive-carousel": "^3.1.28",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
