@@ -17,6 +17,7 @@ export default class Home extends Component {
                 <img className='bigimg' src="https://photos-6.dropbox.com/t/2/AABpJ3BSK502wc-wEie_E8a00V-JLpU6bnD3dn2BWSTpYg/12/455873118/jpeg/32x32/1/_/1/2/2017-10-31-03-10-28324541030.jpg/EL3Z1NcDGIMBIAcoBw/T1KqJPTY7BZ2IbhBMl3muYfTuw64raFjRoE8-Y_nta8?size=1600x1200&size_mode=3" alt="Price Drops" />
                 <img className='bigimg' src="https://photos-2.dropbox.com/t/2/AAA3jYAFdgfmCsxwWCGmwm7rek0bAQsahZEwonbsccppNQ/12/455873118/jpeg/32x32/1/_/1/2/2017-11-03-04-11-451073255168.jpg/EL3Z1NcDGIMBIAcoBw/UMAHyvi_jIomLEzBGKEcA4IxIPgwXsBE5wmXSqzYO-o?size=1600x1200&size_mode=3" alt="Staff Picks" />
                 <p className='text'>Preview</p>
+                <div className="image-flex">
                 <img className='images' src="https://photos-3.dropbox.com/t/2/AABtDj63mq629p9RF_-Qbx5PcJ8pDGnjOiO6eBDVLCNUCg/12/455873118/jpeg/32x32/1/_/1/2/AirJordan12Retrobg(Gs)%22Bordeaux%2CAirJordan%2C%24150%22.jpeg/EL3Z1NcDGHwgBygH/nN6I5fV_C3i6w83huLQNUCEe7TC5B_TLretVRdehbmw?size=2048x1536&size_mode=3" alt="Air Jordan 12 Retro Bg (Gs) Bordeax" />
                 <img className='images' src="https://photos-1.dropbox.com/t/2/AAD2tRSonNXfYuvgLHFdxyw8tzvfrmt-h74wQ-9r01YnaA/12/455873118/jpeg/32x32/1/_/1/2/NikeAirMax1Anniversary%2CNike%2C%24170.jpeg/EL3Z1NcDGHwgBygH/k14EMvoaI2XsL_VeCVx-TdeO6bQnruUKz0_B2doPkPs?size=2048x1536&size_mode=3" alt="Nike Air Max Anniversary" />
                 <img className='images' src="https://photos-6.dropbox.com/t/2/AACBh05y526fn7ZO-raxFztjZAsIxxYxDEbaPg8VbdmUCA/12/455873118/jpeg/32x32/1/_/1/2/YeezyBoost350V2%22Cream%22%2CAdidas%2C%24550.jpeg/EL3Z1NcDGHwgBygH/RqEyzFpgbYcYGunRPacP-SsbYLTnBaXazpgc9wLeLuI?size=2048x1536&size_mode=3" alt="Yeezy Boost 350 V2 Cream" />
@@ -47,7 +48,7 @@ export default class Home extends Component {
                 <img className='images' src="https://photos-1.dropbox.com/t/2/AADf5aB_4P2CahXPA06CkK0Ui_vDSQrvpXccCzBmsDJYqQ/12/455873118/jpeg/32x32/1/_/1/2/AirJordan8Retro%2CAirJordan%2C%24175.jpeg/EL3Z1NcDGHwgBygH/QQ2KSZOkqr5AlY8bUvIQH-8Zaps4D3rNVvmERP6nF0k?size=2048x1536&size_mode=3" alt="Air Jordan 8 Retro" />
                 <img className='images' src="https://photos-1.dropbox.com/t/2/AAAebCp6J6X2iSdhADqsnadDAtMGthGpx7jzw2r0SKN94g/12/455873118/jpeg/32x32/1/_/1/2/NMD%20R1PK%20%22Zebra%22%2CAdidas%2C%24150.jpeg/EL3Z1NcDGHwgBygH/ww9HSoH8DVG5l1juksGDREogxf7i2sSL1t-JDMoHizg?size=2048x1536&size_mode=3" alt="NMD R1 PK Zebra" />
                 <img className='images' src="https://photos-4.dropbox.com/t/2/AAAulBl0lYxW_TuevuSvW08M89V4Lw2ZXBMvPSpC9K6JBQ/12/455873118/jpeg/32x32/1/_/1/2/YeezyBoost350%22PirateBlack(2016)%22%2CAdidas%2C%241235.jpeg/EL3Z1NcDGHwgBygH/CDBMorQCm6fLMH8C785Xz0jMoCRA-0bVf0xfy1BHwAM?size=2048x1536&size_mode=3" alt="Yeezy Boost 350 Pirate Black (2016)" />
-
+                </div>
             </div>
         )
     }
