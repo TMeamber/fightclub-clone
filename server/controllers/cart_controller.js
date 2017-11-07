@@ -15,10 +15,10 @@ module.exports = {
   },
   deleteCart: (req, res, next) => {
     const dbInstance = req.app.get('db');
-
-    dbInstance.delete_cart()
-      .then(() => res.status(200).send())
-      .catch(() => res.status(500).send());
+    
+    dbInstance.delete_cart([req.params.id, req.user.id])
+      .then(() => res.status(200).send('deleted successful'))
+      .catch((err) => res.status(500).send(err));
   },
 
 addCart: (req, res, next) =>{

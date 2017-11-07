@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
 import Brand from './components/Brand';
-import Productdetails from './components/Productsdetails';
+// import Productdetails from './components/Productsdetails';
 import { Route, Link } from 'react-router-dom';
 import logo from './components/logo.png'
 import Cart from './components/Cart';
@@ -17,8 +17,6 @@ class App extends Component {
           <nav className="navbar">
             <Link to="/"><img className="logo" alt='' src={logo} /></Link>
             <input className="search" />
-            <a href="http://localhost:3000/cart"> <i class="fa fa-shopping-cart"></i>
-                   </a>
             <a href='http://localhost:3005/auth'>
               <div className="login">JOIN / SIGN IN</div>
             </a>
@@ -43,7 +41,7 @@ class App extends Component {
         </div>
         <Route exact path='/' component={Home} />
         <Route path='/brand/:brand/' component={Brand} />
-        <Route path='/productsdetails' component={Productdetails} />
+        {/* <Route path='/productsdetails' component={Productdetails} /> */}
         <Route path='/cart' component={Cart} />
       </div>
     );

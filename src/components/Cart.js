@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import { displayCart } from '../ducks/reducer';
 import axios from 'axios'
+import Cartshoecard from './Cartshoecard';
 
 
 
@@ -13,18 +14,42 @@ class Cart extends Component {
     this.state = {
       cart: []
     }
+    this.refresh = this.refresh.bind(this)
   }
   componentDidMount() {
     axios.get('/api/cart').then(res =>{
-      console.log(res)
+      this.setState(()=>{
+        return {
+          cart: res.data
+        }
+      })
     } )
   }
+
+
+  refresh(){
+    axios.get('/api/cart').then(res =>{
+      this.setState(()=>{
+        return {
+          cart: res.data
+        }
+      })
+    })
+  }
     render() {
-      return (
-        <div>
-       {this.state.cart}
-       </div>
-    )
+      let mappedCart = this.state.cart.map((e,i)=>{
+        return <Cartshoecard key={i}
+        brand={e.brand}
+        name={e.shoe_name}
+        price={e.price}
+        image={e.image}
+        id={e.id}
+        refresh={this.refresh}
+    />
+      })
+      return mappedCart;
+       
+    
     }
 }
 function mapStateToProps(state) {

@@ -82,7 +82,7 @@ app.put('/api/cart', cart_controller.updateCart)
 //gets the products to show up in the cart
 // app.get('/api/cart', cart_controller.getCart)
 //when purchased or deleted remove items from cart
-app.delete('/api/cart', cart_controller.deleteCart)
+app.delete('/api/cart/:id', cart_controller.deleteCart)
 //add to cart
 app.post('/api/cart', cart_controller.addCart)
 //displays cart products
