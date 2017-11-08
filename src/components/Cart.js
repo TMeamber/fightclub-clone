@@ -57,7 +57,7 @@ class Cart extends Component {
     return (
       <div>
         {mappedCart}
-        <h1>Total: ${this.state.total}</h1>
+        <h1 className="total">Total: ${this.state.total}</h1>
       </div>
     )
   }
