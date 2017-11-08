@@ -9,14 +9,18 @@ export default class Home extends Component {
     render() {
         return (
             <div>
+                <div className="home-img">
                 <Carousel>
+                    
                 <img className='bigimg' src="https://photos-4.dropbox.com/t/2/AACsl7L6_xdmNvlUnHVh3TqkI2X-ZP5VruLLyGR0aaRgXA/12/455873118/jpeg/32x32/1/_/1/2/2017-10-18-01-10-042079128963.jpg/EL3Z1NcDGIMBIAcoBw/-KuY1mBGhw__tHBNJsgUnn26H09C5t9JNZMzya7F2gs?size=1600x1200&size_mode=3" alt="Home coming" />
                 <img className='bigimg' src="https://photos-4.dropbox.com/t/2/AACqygZRVXO9QlbSvRNwt6hbTIUQrx9pUNEBfiMsJcNNbg/12/455873118/jpeg/32x32/1/_/1/2/2017-10-23-02-10-04607157835.jpg/EL3Z1NcDGIMBIAcoBw/CjmEHy0idSZvHw9HwTPDvLpAACZCQskeWN1BBWNVnFo?size=1600x1200&size_mode=3" alt="Win like 82" />
                 <img className='bigimg' src="https://photos-4.dropbox.com/t/2/AAB3gBmWN42zdl4UfFmMH45BIujp5nlO7S_rk60ZbebcFQ/12/455873118/jpeg/32x32/1/_/1/2/2017-10-26-03-10-53766833055.jpg/EL3Z1NcDGIMBIAcoBw/fuRt34pysw4hQuNrc1iHXcCIhUh2ljqG9UZxgyjbVu8?size=1600x1200&size_mode=3" alt="Make a statement" />
                 <img className='bigimg' src="https://photos-2.dropbox.com/t/2/AADDh51Zb4tLbO69iHAnX5ozRbMPqaXMdn0bauoL3zjIlw/12/455873118/jpeg/32x32/1/_/1/2/2017-10-28-12-10-06535538983.jpg/EL3Z1NcDGIMBIAcoBw/FyazYecjBI0w0a550g0LwR56b0aAMd25NP5ieOQI6xU?size=1600x1200&size_mode=3" alt="Freddy Kreuger" />
                 <img className='bigimg' src="https://photos-6.dropbox.com/t/2/AABpJ3BSK502wc-wEie_E8a00V-JLpU6bnD3dn2BWSTpYg/12/455873118/jpeg/32x32/1/_/1/2/2017-10-31-03-10-28324541030.jpg/EL3Z1NcDGIMBIAcoBw/T1KqJPTY7BZ2IbhBMl3muYfTuw64raFjRoE8-Y_nta8?size=1600x1200&size_mode=3" alt="Price Drops" />
                 <img className='bigimg' src="https://photos-2.dropbox.com/t/2/AAA3jYAFdgfmCsxwWCGmwm7rek0bAQsahZEwonbsccppNQ/12/455873118/jpeg/32x32/1/_/1/2/2017-11-03-04-11-451073255168.jpg/EL3Z1NcDGIMBIAcoBw/UMAHyvi_jIomLEzBGKEcA4IxIPgwXsBE5wmXSqzYO-o?size=1600x1200&size_mode=3" alt="Staff Picks" />
+               
                 </Carousel>
+                </div>
                 <p className='text'>Preview</p>
                 <div className="image-flex">
                 <img className='images' src="https://photos-3.dropbox.com/t/2/AABtDj63mq629p9RF_-Qbx5PcJ8pDGnjOiO6eBDVLCNUCg/12/455873118/jpeg/32x32/1/_/1/2/AirJordan12Retrobg(Gs)%22Bordeaux%2CAirJordan%2C%24150%22.jpeg/EL3Z1NcDGHwgBygH/nN6I5fV_C3i6w83huLQNUCEe7TC5B_TLretVRdehbmw?size=2048x1536&size_mode=3" alt="Air Jordan 12 Retro Bg (Gs) Bordeax" />
