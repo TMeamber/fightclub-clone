@@ -18,9 +18,12 @@ class Cart extends Component {
   }
   componentDidMount() {
     axios.get('/api/cart').then(res =>{
+      var total = res.data.reduce((a,b) => a + Number(b.price.split('$')[1]), 0)
+      console.log(total);
       this.setState(()=>{
         return {
-          cart: res.data
+          cart: res.data,
+          total: total
         }
       })
     } )
@@ -29,9 +32,12 @@ class Cart extends Component {
 
   refresh(){
     axios.get('/api/cart').then(res =>{
+      var total = res.data.reduce((a,b) => a + Number(b.price.split('$')[1]), 0)
+      console.log(total);
       this.setState(()=>{
         return {
-          cart: res.data
+          cart: res.data,
+          total: total
         }
       })
     })
