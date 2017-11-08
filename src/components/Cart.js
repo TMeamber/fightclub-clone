@@ -55,8 +55,10 @@ class Cart extends Component {
       />
     })
     return (
-      <div>
+      <div className="cart">
+        <div className="cartflex">
         {mappedCart}
+        </div>
         <h1 className="total">Total: ${this.state.total}</h1>
       </div>
     )

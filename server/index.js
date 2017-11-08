@@ -9,9 +9,6 @@ const massive = require('massive');
 const product_controller = require('./controllers/product_controller');
 const user_controller = require('./controllers/user_controller');
 const cart_controller = require('./controllers/cart_controller');
-const config =  require('./config');
-const stripe = require('stripe');(config.secret_key);
-const app =  module.exports = express();
 
 
 
