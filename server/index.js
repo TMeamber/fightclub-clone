@@ -9,6 +9,7 @@ const massive = require('massive');
 const product_controller = require('./controllers/product_controller');
 const user_controller = require('./controllers/user_controller');
 const cart_controller = require('./controllers/cart_controller');
+const stripe = require('stripe')(process.env.secret_key);
 const app = express();
 
 
@@ -88,46 +89,42 @@ app.post('/api/cart', cart_controller.addCart)
 //displays cart products
 app.get('/api/cart', cart_controller.displayCart)
 
-// app.use(bodyParser.json());
-// app.use(cors())
+app.post('/api/payment', function(req, res, next){
+//convert amount to pennies
+const amountArray = req.body.amount.toString().split('');
+const pennies = [];
+for (var i = 0; i < amountArray.length; i++) {
+if(amountArray[i] === ".") {
+  if (typeof amountArray[i + 1] === "string") {
+    pennies.push(amountArray[i + 1]);
+  } else {
+    pennies.push("0");
+  }
+  if (typeof amountArray[i + 2] === "string") {
+    pennies.push(amountArray[i + 2]);
+  } else {
+    pennies.push("0");
+  }
+    break;
+} else {
+    pennies.push(amountArray[i])
+}
+}
+const convertedAmt = parseInt(pennies.join(''));
 
-
-// app.post('/api/payment', function(req, res, next){
-// //convert amount to pennies
-// const amountArray = req.body.amount.toString().split('');
-// const pennies = [];
-// for (var i = 0; i < amountArray.length; i++) {
-// if(amountArray[i] === ".") {
-//   if (typeof amountArray[i + 1] === "string") {
-//     pennies.push(amountArray[i + 1]);
-//   } else {
-//     pennies.push("0");
-//   }
-//   if (typeof amountArray[i + 2] === "string") {
-//     pennies.push(amountArray[i + 2]);
-//   } else {
-//     pennies.push("0");
-//   }
-//     break;
-// } else {
-//     pennies.push(amountArray[i])
-// }
-// }
-// const convertedAmt = parseInt(pennies.join(''));
-
-// const charge = stripe.charges.create({
-// amount: convertedAmt, 
-// currency: 'usd',
-// source: req.body.token.id,
-// description: 'Test charge from react app'
-// }, function(err, charge) {
-// if (err) return res.sendStatus(500)
-// return res.sendStatus(200);
-// if (err && err.type === 'StripeCardError') {
-//   // The card has been declined
-// }
-// });
-// });
+const charge = stripe.charges.create({
+amount: convertedAmt, 
+currency: 'usd',
+source: req.body.token.id,
+description: 'Test charge from react app'
+}, function(err, charge) {
+if (err) return res.sendStatus(500)
+return res.sendStatus(200);
+if (err && err.type === 'StripeCardError') {
+  // The card has been declined
+}
+});
+});
 
 
 

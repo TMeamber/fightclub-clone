@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { displayCart } from '../ducks/reducer';
 import axios from 'axios'
 import Cartshoecard from './Cartshoecard';
-
-
+import StripeCheckout from 'react-stripe-checkout'
+import stripe from './stripeKey';
 
 
 class Cart extends Component {
@@ -56,11 +56,19 @@ class Cart extends Component {
     })
     return (
       <div className="cart">
+      <div className="stripe">
+        <StripeCheckout
+          token={this.onToken}
+          stripeKey={ process.env.REACT_APP_PUBLISHABLE_KEY }
+          amount={this.state.total}
+        />
+      </div>
         <div className="cartflex">
         {mappedCart}
         </div>
         <h1 className="total">Total: ${this.state.total}</h1>
       </div>
+      
     )
   }
 
@@ -71,3 +79,4 @@ function mapStateToProps(state) {
   }
 }
 export default connect(mapStateToProps, { displayCart })(Cart);
+
