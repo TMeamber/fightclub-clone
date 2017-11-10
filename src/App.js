@@ -7,7 +7,7 @@ import { Route, Link } from 'react-router-dom';
 import logo from './components/logo.png'
 import Cart from './components/Cart';
 import cartlogo from './components/cart.png'
-import Stripe from './components/Stripe'
+
 
 class App extends Component {
   render() {

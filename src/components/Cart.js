@@ -4,7 +4,6 @@ import { displayCart } from '../ducks/reducer';
 import axios from 'axios'
 import Cartshoecard from './Cartshoecard';
 import StripeCheckout from 'react-stripe-checkout'
-import stripe from './stripeKey';
 
 
 class Cart extends Component {
@@ -60,7 +59,7 @@ class Cart extends Component {
         <StripeCheckout
           token={this.onToken}
           stripeKey={ process.env.REACT_APP_PUBLISHABLE_KEY }
-          amount={this.state.total}
+          amount={this.state.total * 100}
         />
       </div>
         <div className="cartflex">
