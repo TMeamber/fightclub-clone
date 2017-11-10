@@ -17,7 +17,7 @@ class App extends Component {
           <nav className="navbar">
             <Link to="/"><img className="logo" alt='' src={logo} /></Link>
             <input className="search" />
-            <a href='proccess.env.AUTH_LOGIN'>
+            <a href='proccess.env.REACT_APP_LOGIN'>
               <div className="login">JOIN / SIGN IN</div>
             </a>
             <Link to="/cart"><img className="cartlogo" alt='' src={cartlogo} /></Link> 
